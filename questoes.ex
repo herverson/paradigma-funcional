@@ -254,6 +254,9 @@ defmodule QuestionsFunctional do
   end
   def insertionSort([]), do: []
   def insertionSort([a | as]), do: insere(a, insertionSort as)
-
-  def torre({x,y}), do: {x,y}
+  # Questão 23
+  def torre({x,y}), do: (vertical({x,y})) ++ (horizontal({x,y}))
+  defp horizontal({x,y}), do: for a <- 1..8 , a != x, do: {a,y}
+  defp vertical({x,y}),   do: for b <- 1..8 , b != y, do: {x,b}
+  
 end
